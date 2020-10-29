@@ -3,6 +3,7 @@ class Test {
     Point p1 = new Point(1, 2);
     Point p2 = new Point(7, 8);
     Point p3 = new Point(5, 9);
+    Point p1n = new Point(10,10);
     Point p1s = new Point(1, 2);
     System.out.println(p1.getX());
     System.out.println(p1.getY());
@@ -14,5 +15,7 @@ class Test {
     System.out.println(t1.getArea());
     System.out.println(t1.toString());
     System.out.println(t1.classify());
+    t1.setVertex(0, p1n);
+    System.out.println(t1.toString());
   }
 }

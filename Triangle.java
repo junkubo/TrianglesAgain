@@ -13,5 +13,26 @@ class Triangle {
   public double getPerimeter() {
       return v1.distanceTo(v2) + v2.distanceTo(v3) + v3.distanceTo(v1);
   }
-
+  public double getArea() {
+    double s = getPerimeter()/2;
+    double side1 = v1.distanceTo(v2);
+    double side2 = v2.distanceTo(v3);
+    double side3 = v3.distanceTo(v1);
+    System.out.println(s + " - " + side1 + " - " + side2 + " " + side3);
+    return Math.sqrt(s * (s - side1) * (s - side2) * (s - side3));
+  }
+  public String classify() {
+    if(v1.distanceTo(v2) == v2.distanceTo(v3) && v2.distanceTo(v3) == v3.distanceTo(v1)) {
+      return "equilateral";
+    }
+    else if (v1.distanceTo(v2) == v2.distanceTo(v3) || v2.distanceTo(v3) == v3.distanceTo(v1) || v3.distanceTo(v1) == v1.distanceTo(v2)) {
+      return "isosceles";
+    }
+    else {
+      return "scalene";
+    }
+  }
+  public String toString() {
+    return "v1(" + v1.getX() + ", " + v1.getY() + ") " + "v2(" + v2.getX() + ", " + v2.getY() + ") " + "v3(" + v3.getX() + ", " + v3.getY() + ")";
+  }
 }
